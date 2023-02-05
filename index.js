@@ -29,7 +29,7 @@ let createPost=()=>{
     <div>
     <p> ${data.text}</p>
     <span class="option">
-        <i class="fa-solid fa-pen-to-square"></i>
+        <i onClick="editpost(this)" class="fa-solid fa-pen-to-square"></i>
         <i onClick="deletepost(this)" class="fa-solid fa-trash"></i>
     </span>
     </div>
@@ -38,4 +38,9 @@ let createPost=()=>{
 }
  let deletepost=(e)=>{
     e.parentElement.parentElement.remove();
+ }
+ let editpost=(e)=>{
+    input.value=e.parentElement.previousElementSibling.innerHTML;
+    e.parentElement.parentElement.remove();
+
  }
